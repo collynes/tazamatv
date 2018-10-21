@@ -1,0 +1,18 @@
+ php artisan make:migration create_links_table --create=links
+ 
+ 
+ php artisan migrate
+ php artisan migrate:reset
+ php artisan migrate --force
+ php artisan migrate:rollback
+ php artisan migrate:refresh
+ 
+ 
+ ===============================================================================
+ on 
+ Mogration erroroccures when runing migration,do the following 
+ open AppServiceProvider
+add this import
+use Illuminate\Support\Facades\Schema;
+on boot function add
+ Schema::defaultStringLength(191);
